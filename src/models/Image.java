@@ -1,27 +1,34 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package models;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 import services.ImageLoaderFactory;
 
-import java.util.concurrent.TimeUnit;
+public class Image implements Element {
+    private String imageName;
 
-public class Image implements Element{
-    String url;
-    public Image(String u) {
-        url = u;
-        ImageLoaderFactory.create("JPG");
+    public Image(String name) {
+        this.imageName = name;
+
         try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            TimeUnit.SECONDS.sleep(2L);
+            ImageLoaderFactory.create(name);
+        } catch (IOException | InterruptedException var3) {
+            var3.printStackTrace();
         }
-    }
-    public void print(){
-        System.out.println("Image with url: "+url);
+
     }
 
     public void accept(Visitor v) {
         v.visit(this);
     }
 
-
+    public void print() {
+        System.out.println("models.Image with name: " + this.imageName);
+    }
 }

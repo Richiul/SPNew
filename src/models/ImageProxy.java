@@ -1,22 +1,27 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package models;
 
-public class ImageProxy implements  Element{
-    String url;
-    Image realImage;
-    public ImageProxy(String u) {
-        url = u;
+public class ImageProxy implements Element {
+    private String name;
+    Image realImage = null;
+
+    public ImageProxy(String name) {
+        this.name = name;
     }
-    public Image loadImage(){
-        if(realImage==null){
-            realImage=new Image(url);
-        }
-        return realImage;
-    }
-    public void print() {
-        realImage=loadImage();
-        realImage.print();
-    }
+
     public void accept(Visitor v) {
         v.visit(this);
+    }
+
+    public void print() {
+        if (this.realImage == null) {
+            this.realImage = new Image(this.name);
+        }
+
+        this.realImage.print();
     }
 }

@@ -1,9 +1,10 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package services;
 
-import models.Paragraph;
-
-import javax.naming.Context;
-
 public interface AlignStrategy {
-    public void render(Paragraph p, Context c);
+    void render(String var1);
 }

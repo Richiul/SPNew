@@ -1,6 +1,7 @@
 package models;
 
 public interface Element {
-    public void print();
-    public void accept(Visitor v);
+    void print();
+
+    void accept(Visitor var1);
 }

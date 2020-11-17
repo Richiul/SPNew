@@ -1,9 +1,20 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package models;
 
 public interface Visitor {
-    public abstract void visit(Section s);
-    public abstract void visit(Paragraph p );
-    public abstract void visit(ImageProxy ip);
-    public abstract void visit(Image i);
-    public abstract void visit(Table t);
+    void visit(Section var1);
+
+    void visit(Paragraph var1);
+
+    void visit(ImageProxy var1);
+
+    void visit(Image var1);
+
+    void visit(Table var1);
+
+    void visit(Book var1);
 }
